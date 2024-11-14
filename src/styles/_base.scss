@@ -1,0 +1,6 @@
+@import './mixins.scss';
+
+body {
+    @include flex-center;
+    margin: 4rem;
+}
