@@ -1,18 +1,18 @@
-/* import styled from 'styled-components';
- */ import TodoTitle from '../../components/TodoTitle';
-import TodoItem from '../../components/TodoItem';
+import styled from 'styled-components';
+import TodoItem from '../TodoItem';
+import Button from '../common/Button';
 
-/* const StyledTitre = styled.h1`
-    color: #333;
+const StyledTitre = styled.h1`
+    color: var(--dark-green);
     font-size: 2rem;
     text-align: center;
-`; */
+`;
 
 function Home() {
     return (
         <div className="main">
-            {/*             <StyledTitre>To-Do List</StyledTitre> */}{' '}
-            <TodoTitle />
+            <StyledTitre>To-Do List</StyledTitre>
+            <Button />
             <TodoItem />
         </div>
     );

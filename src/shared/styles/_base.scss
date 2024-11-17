@@ -3,3 +3,24 @@ body {
     margin: 4rem;
     background-color: var(--dark-green);
 }
+
+.main {
+    @include flex-center;
+    flex-direction: column;
+    background-color: var(--low-wight);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 30rem;
+    color: var(--dark-green);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+
+    h1 {
+        color: var(--green-color);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
