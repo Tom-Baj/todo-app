@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// Composants stylés
 const TodoItemWrapper = styled.div`
     display: flex;
     justify-content: space-between;
@@ -32,7 +31,6 @@ const DeleteButton = styled.button`
     }
 `;
 
-// Composant fonctionnel
 function TodoItem() {
     return (
         <TodoItemWrapper>
