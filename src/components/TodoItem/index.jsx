@@ -31,7 +31,7 @@ const DeleteButton = styled.button`
     }
 `;
 
-function TodoItem() {
+function TodoItem(props) {
     return (
         <TodoItemWrapper>
             <input type="checkbox" />

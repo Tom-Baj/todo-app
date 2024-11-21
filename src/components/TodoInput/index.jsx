@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const StyledTodoContainer = styled.div`
     display: flex;
@@ -12,7 +12,8 @@ const StyledTodoInput = styled.input`
     font-size: 1rem;
     margin: 10px;
     padding: 10px;
-    background-color: transparent;
+    border-radius: 0.5rem;
+    background-color: var(--gold);
     &:focus {
         outline: none;
     }
@@ -29,7 +30,7 @@ function TodoInput() {
             <button className="todo-input__button">
                 <FontAwesomeIcon
                     className="todo-input__icon"
-                    icon={faSquareCaretRight}
+                    icon={faArrowRight}
                 />
             </button>
         </StyledTodoContainer>
