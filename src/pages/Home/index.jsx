@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import TodoInput from '../../components/TodoInput';
+import TodoItem from '../../components/TodoItem';
 
 const StyledTitre = styled.h1`
     color: var(--dark-green);
@@ -13,6 +14,7 @@ function Home() {
         <div className="main">
             <StyledTitre>To-Do List</StyledTitre>
             <TodoInput />
+            <TodoItem />
         </div>
     );
 }

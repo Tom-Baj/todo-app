@@ -8,7 +8,7 @@ const StyledTodoContainer = styled.div`
 `;
 
 const StyledTodoInput = styled.input`
-    border: none;
+    border: 1px solid var(--light-brown);
     font-size: 1rem;
     margin: 10px;
     padding: 10px;
