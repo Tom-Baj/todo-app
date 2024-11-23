@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 
-const StyledTodoContainer = styled.div`
+const StyledTodoContainer = styled.form`
     display: flex;
     flex-direction: row;
 `;
@@ -27,10 +27,10 @@ function TodoInput() {
                 type="text"
                 placeholder="Ajouter une tâche"
             />
-            <button className="todo-input__button">
+            <button className="todo-input__button" type="submit">
                 <FontAwesomeIcon
                     className="todo-input__icon"
-                    icon={faArrowRight}
+                    icon={faSquarePlus}
                 />
             </button>
         </StyledTodoContainer>

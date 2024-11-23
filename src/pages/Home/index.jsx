@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import TodoInput from '../../components/TodoInput';
-import TodoItem from '../../components/TodoItem';
+import TodoList from '../../components/TodoList';
 
 const StyledTitre = styled.h1`
     color: var(--dark-green);
@@ -10,11 +11,20 @@ const StyledTitre = styled.h1`
 `;
 
 function Home() {
+    const [tasks, setTasks] = useState([]); // État pour stocker les tâches
+
+    // Fonction pour ajouter une nouvelle tâche
+    const addTask = (taskName) => {
+        if (taskName.trim() !== '') {
+            setTasks([...tasks, { name: taskName, completed: false }]);
+        }
+    };
+
     return (
         <div className="main">
             <StyledTitre>To-Do List</StyledTitre>
-            <TodoInput />
-            <TodoItem />
+            <TodoInput addTask={addTask} />
+            <TodoList tasks={tasks} />
         </div>
     );
 }

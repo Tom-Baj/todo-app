@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Checkbox from '../Checkbox';
 
 const TodoItemWrapper = styled.div`
     display: flex;
@@ -31,11 +32,12 @@ const DeleteButton = styled.button`
     }
 `;
 
-function TodoItem(props) {
+function TodoItem({ name }) {
     return (
         <TodoItemWrapper>
-            <input type="checkbox" />
+            <Checkbox />
             <StyledTodoTitle>Todo item</StyledTodoTitle>
+            <StyledTodoTitle>{name}</StyledTodoTitle>
             <DeleteButton>Delete</DeleteButton>
         </TodoItemWrapper>
     );
