@@ -8,11 +8,11 @@ const StyledTodoList = styled.div`
     gap: 1rem;
 `;
 
-function TodoList() {
+function TodoList(tasks) {
     return (
         <StyledTodoList>
-            <TodoItem name="Todo" />
-            <TodoItem name="Test" />
+            <TodoItem />
+            <TodoItem />
             <TodoItem />
         </StyledTodoList>
     );

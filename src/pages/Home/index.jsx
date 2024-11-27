@@ -11,9 +11,8 @@ const StyledTitre = styled.h1`
 `;
 
 function Home() {
-    const [tasks, setTasks] = useState([]); // État pour stocker les tâches
+    const [tasks, setTasks] = useState([]);
 
-    // Fonction pour ajouter une nouvelle tâche
     const addTask = (taskName) => {
         if (taskName.trim() !== '') {
             setTasks([...tasks, { name: taskName, completed: false }]);

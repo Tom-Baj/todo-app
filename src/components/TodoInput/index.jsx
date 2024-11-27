@@ -19,9 +19,16 @@ const StyledTodoInput = styled.input`
     }
 `;
 
-function TodoInput() {
+function TodoInput({ addTask }) {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const taskName = event.target.querySelector('.todo-input__field').value;
+        addTask(taskName);
+        event.target.reset();
+    };
+
     return (
-        <StyledTodoContainer>
+        <StyledTodoContainer onSubmit={handleSubmit}>
             <StyledTodoInput
                 className="todo-input__field"
                 type="text"
