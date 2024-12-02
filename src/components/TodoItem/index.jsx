@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import Checkbox from '../Checkbox';
+import Icon from '../Icon';
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const TodoItemWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5rem;
+    flex: 1;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
@@ -18,27 +20,21 @@ const StyledTodoTitle = styled.p`
     text-align: center;
 `;
 
-const DeleteButton = styled.button`
-    background-color: var(--gold);
-    color: var(--dark-green);
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-
-    &:hover {
-        background-color: var(--pink);
-    }
+const IconWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 `;
 
 function TodoItem({ name }) {
     return (
         <TodoItemWrapper>
             <Checkbox />
-            <StyledTodoTitle>Todo item</StyledTodoTitle>
             <StyledTodoTitle>{name}</StyledTodoTitle>
-            <DeleteButton>Delete</DeleteButton>
+            <IconWrapper>
+                <Icon type={faPen} />
+                <Icon type={faTrash} />
+            </IconWrapper>
         </TodoItemWrapper>
     );
 }

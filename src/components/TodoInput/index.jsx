@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import Icon from '../Icon';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const StyledTodoContainer = styled.form`
     display: flex;
@@ -29,17 +29,15 @@ function TodoInput({ addTask }) {
 
     return (
         <StyledTodoContainer onSubmit={handleSubmit}>
-            <StyledTodoInput
-                className="todo-input__field"
-                type="text"
-                placeholder="Ajouter une tâche"
-            />
-            <button className="todo-input__button" type="submit">
-                <FontAwesomeIcon
-                    className="todo-input__icon"
-                    icon={faSquarePlus}
+            <label htmlFor="todo-input" className="todo-input__label">
+                <StyledTodoInput
+                    id="todo-input"
+                    className="todo-input__field"
+                    type="text"
+                    placeholder="Ajouter une tâche"
                 />
-            </button>
+            </label>
+            <Icon type={faPlus} />
         </StyledTodoContainer>
     );
 }

@@ -4,7 +4,8 @@ body {
     background-color: var(--dark-green);
 }
 
-.main {
+.main,
+.header {
     @include flex-center;
     flex-direction: column;
     background-color: var(--low-white);
@@ -15,12 +16,14 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     text-align: center;
-    width: 50vw;
+    width: 60vw;
+    height: auto;
+    margin-bottom: 1rem;
 
     h1 {
         color: var(--green-color);
-        font-size: 2rem;
-        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
     }
 }
 

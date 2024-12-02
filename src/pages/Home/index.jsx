@@ -15,15 +15,23 @@ function Home() {
 
     const addTask = (taskName) => {
         if (taskName.trim() !== '') {
-            setTasks([...tasks, { name: taskName, completed: false }]);
+            setTasks([
+                ...tasks,
+                { id: Date.now(), name: taskName, completed: false },
+            ]);
         }
     };
+
+    /*     const deleteTask = (taskId) => {
+        const updatedTasks = tasks.filter((task) => task.id !== taskId);
+        setTasks(updatedTasks);
+    }; */
 
     return (
         <div className="main">
             <StyledTitre>To-Do List</StyledTitre>
             <TodoInput addTask={addTask} />
-            <TodoList tasks={tasks} />
+            <TodoList tasks={tasks} /> {/* deleteTask={deleteTask} */}
         </div>
     );
 }
