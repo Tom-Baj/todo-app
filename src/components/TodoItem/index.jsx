@@ -10,7 +10,9 @@ const TodoItemWrapper = styled.div`
     flex: 1;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    box-shadow:
+        5px 5px 10px #bebdb2,
+        -5px -5px 10px #ffffff;
     background-color: var(--low-wight);
 `;
 
