@@ -2,9 +2,29 @@ import styled from 'styled-components';
 import Icon from '../Icon';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const StyledTodoContainer = styled.form`
+const StyledTodoFormContainer = styled.form`
     display: flex;
     flex-direction: row;
+`;
+
+const StyledAddButton = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    juste-content: center;
+    margin: 0;
+    gap: 1rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background-color: var(--gold);
+    box-shadow:
+        5px 5px 10px #bebdb2,
+        -5px -5px 10px #ffffff;
+    color: var(--dark-green);
+    transition: 0.3s;
+    &:hover {
+        background-color: var(--green-color);
+    }
 `;
 
 const StyledTodoInput = styled.input`
@@ -28,7 +48,7 @@ function TodoInput({ addTask }) {
     };
 
     return (
-        <StyledTodoContainer onSubmit={handleSubmit}>
+        <StyledTodoFormContainer onSubmit={handleSubmit}>
             <label htmlFor="todo-input" className="todo-input__label">
                 <StyledTodoInput
                     id="todo-input"
@@ -37,8 +57,10 @@ function TodoInput({ addTask }) {
                     placeholder="Ajouter une tâche"
                 />
             </label>
-            <Icon type={faPlus} />
-        </StyledTodoContainer>
+            <StyledAddButton>
+                <Icon className="plus" type={faPlus} />
+            </StyledAddButton>
+        </StyledTodoFormContainer>
     );
 }
 

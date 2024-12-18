@@ -12,15 +12,19 @@ const StyledTodoList = styled.div`
 function TodoList({ tasks, deleteTask }) {
     return (
         <StyledTodoList>
-            {tasks.map((task) => (
-                <TodoItem
-                    key={task.id}
-                    id={task.id}
-                    name={task.name}
-                    completed={task.completed}
-                    deleteTask={deleteTask}
-                />
-            ))}
+            {tasks.length === 0 ? (
+                <p>Aucune tâche à afficher</p>
+            ) : (
+                tasks.map((task) => (
+                    <TodoItem
+                        key={task.id}
+                        id={task.id}
+                        name={task.name}
+                        completed={task.completed}
+                        deleteTask={deleteTask}
+                    />
+                ))
+            )}
         </StyledTodoList>
     );
 }

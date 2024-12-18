@@ -19,7 +19,6 @@ const StyledIconWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
-    font-size: 1rem;
     cursor: pointer;
 `;
 

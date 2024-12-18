@@ -28,11 +28,15 @@ function Home() {
     }; */
 
     return (
-        <div className="main">
-            <StyledTitre>To-Do List</StyledTitre>
-            <TodoInput addTask={addTask} />
-            <TodoList tasks={tasks} /> {/* deleteTask={deleteTask} */}
-        </div>
+        <>
+            <div className="header">
+                <StyledTitre>To-Do List</StyledTitre>
+                <TodoInput addTask={addTask} />
+            </div>
+            <div className="main">
+                <TodoList tasks={tasks} /> {/* deleteTask={deleteTask} */}
+            </div>
+        </>
     );
 }
 
