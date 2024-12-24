@@ -11,7 +11,7 @@ const StyledAddButton = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    juste-content: center;
+    justify-content: center;
     margin: 0;
     gap: 1rem;
     border-radius: 50%;

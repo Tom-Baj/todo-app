@@ -28,14 +28,19 @@ const IconWrapper = styled.div`
     gap: 1rem;
 `;
 
-function TodoItem({ name }) {
+function TodoItem({ completed, id, name, deleteTask }) {
     return (
         <TodoItemWrapper>
-            <Checkbox />
+            <Checkbox completed={false} />
             <StyledTodoTitle>{name}</StyledTodoTitle>
             <IconWrapper>
                 <Icon type={faPen} />
-                <Icon type={faTrash} />
+                <Icon
+                    type={faTrash}
+                    onClick={() => {
+                        deleteTask(id);
+                    }}
+                />
             </IconWrapper>
         </TodoItemWrapper>
     );

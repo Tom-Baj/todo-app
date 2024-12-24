@@ -22,12 +22,9 @@ const StyledButton = styled.button`
     cursor: pointer;
 `;
 
-function Icon({ type }) {
+function Icon({ type, onClick }) {
     return (
-        <StyledIconWrapper
-            className="icon-w>
-        rapper"
-        >
+        <StyledIconWrapper className="icon-wrapper" onClick={onClick}>
             <StyledButton className="todo-input__button" type="submit">
                 <FontAwesomeIcon icon={type} />
             </StyledButton>
