@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import Checkbox from '../Checkbox';
 import Icon from '../Icon';
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const TodoItemWrapper = styled.div`
     display: flex;
@@ -16,10 +16,14 @@ const TodoItemWrapper = styled.div`
     background-color: var(--low-wight);
 `;
 
-const StyledTodoTitle = styled.p`
+const StyledTodoTitle = styled.input`
     color: var(--dark-green);
     font-size: 1.5rem;
     text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
 `;
 
 const IconWrapper = styled.div`
@@ -28,19 +32,31 @@ const IconWrapper = styled.div`
     gap: 1rem;
 `;
 
-function TodoItem({ completed, id, name, deleteTask }) {
+function TodoItem({ id, name, deleteTask, editTask }) {
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedName, setEditedName] = useState(name);
+
+    const handleEdit = () => {
+        if (isEditing && editedName.trim() !== '') {
+            editTask(id, editedName);
+        }
+        setIsEditing(!isEditing);
+    };
+
     return (
         <TodoItemWrapper>
-            <Checkbox completed={false} />
-            <StyledTodoTitle>{name}</StyledTodoTitle>
-            <IconWrapper>
-                <Icon type={faPen} />
-                <Icon
-                    type={faTrash}
-                    onClick={() => {
-                        deleteTask(id);
-                    }}
+            {isEditing ? (
+                <StyledTodoTitle
+                    type="text"
+                    value={editedName}
+                    onChange={(e) => setEditedName(e.target.value)}
                 />
+            ) : (
+                <p>{name}</p>
+            )}
+            <IconWrapper>
+                <Icon type={isEditing ? faCheck : faPen} onClick={handleEdit} />
+                <Icon type={faTrash} onClick={() => deleteTask(id)} />
             </IconWrapper>
         </TodoItemWrapper>
     );

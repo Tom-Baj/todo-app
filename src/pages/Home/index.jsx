@@ -8,6 +8,8 @@ const StyledTitre = styled.h1`
     font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 `;
 
 function Home() {
@@ -38,6 +40,16 @@ function Home() {
         setTasks(updatedTasks);
     };
 
+    const editTask = (taskId, newName) => {
+        const updatedTasks = tasks.map((task) => {
+            if (task.id === taskId) {
+                return { ...task, name: newName };
+            }
+            return task;
+        });
+        setTasks(updatedTasks);
+    };
+
     useEffect(() => {
         try {
             localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -53,7 +65,11 @@ function Home() {
                 <TodoInput addTask={addTask} />
             </div>
             <div className="main">
-                <TodoList tasks={tasks} deleteTask={deleteTask} />
+                <TodoList
+                    tasks={tasks}
+                    deleteTask={deleteTask}
+                    editTask={editTask}
+                />
             </div>
         </>
     );

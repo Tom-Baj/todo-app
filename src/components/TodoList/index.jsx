@@ -9,7 +9,7 @@ const StyledTodoList = styled.div`
     width: 80%;
 `;
 
-function TodoList({ tasks, deleteTask }) {
+function TodoList({ tasks, deleteTask, editTask }) {
     return (
         <StyledTodoList>
             {tasks.length === 0 ? (
@@ -20,8 +20,8 @@ function TodoList({ tasks, deleteTask }) {
                         key={task.id}
                         id={task.id}
                         name={task.name}
-                        completed={task.completed}
                         deleteTask={deleteTask}
+                        editTask={editTask}
                     />
                 ))
             )}
